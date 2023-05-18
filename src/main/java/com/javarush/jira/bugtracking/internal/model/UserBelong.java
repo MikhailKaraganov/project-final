@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 // Link user with role to any object (Project, Task, Sprint)
 @Entity
 @Table(name = "user_belong",

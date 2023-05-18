@@ -76,4 +76,6 @@ public class Task extends TitleEntity {
     @JoinColumn(name = "parent_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Task parent;
+
+
 }
