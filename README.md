@@ -63,4 +63,19 @@
 ![изображение](https://github.com/MikhailKaraganov/project-final/assets/77681385/c553ad84-853f-458e-8538-c22f424cdd81)
 ![изображение](https://github.com/MikhailKaraganov/project-final/assets/77681385/873e9898-77a8-4661-bc9c-f991c6aba4df)
 
+9. Написать Dockerfile для основного сервера 
+
+Для запуска так же необходимо создать сеть докера и запустить в ней контейнер postgres 
+
+(docker network create jiranetwork
+
+docker run --network=jiranetwork -p 5432:5432 --name postgres-db1 -e POSTGRES_USER=jira -e POSTGRES_PASSWORD=JiraRush -e POSTGRES_DB=jira -e PGDATA=/var/lib/postgresql/data/pgdata -v ./pgdata:/var/lib/postgresql/data -d postgres)
+
+Так же нужно измменить URL базы данных в application.yaml (jdbc:postgresql://localhost:5432/jira -> jdbc:postgresql://postgres-db1:5432/jira)
+
+Далее в Idea внести следущие настройки в конфигурацию запуска dockerfile:
+![изображение](https://github.com/MikhailKaraganov/project-final/assets/77681385/5b3df693-c167-4a46-acf2-3b0cf67e071d)
+
+
+
 
