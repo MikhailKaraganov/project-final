@@ -5,4 +5,5 @@ target
 logs
 *.patch
 application-sensitive.yaml
+README.md
 
