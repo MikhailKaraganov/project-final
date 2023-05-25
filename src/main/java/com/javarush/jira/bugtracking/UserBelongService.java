@@ -40,11 +40,12 @@ public class UserBelongService {
             userBelongRepository.save(userBelong);
         }
         else{
-            for (UserBelong curentUserBelong : userBelongList) {
-                if ((curentUserBelong.getUserId() != userId) && (curentUserBelong.getObjectId() != taskId)) {
-                    UserBelong userBelong = createUserBelong(userId, taskId);
-                    userBelongRepository.save(userBelong);
-                }
+            long count = userBelongList.stream()
+                    .filter(userBelong -> userBelong.getObjectId() == taskId)
+                    .count();
+            if (count == 0) {
+                UserBelong userBelong = createUserBelong(userId, taskId);
+                userBelongRepository.save(userBelong);
             }
         }
     }

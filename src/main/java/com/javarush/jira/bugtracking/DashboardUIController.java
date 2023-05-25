@@ -31,13 +31,13 @@ public class DashboardUIController {
         return "index";
     }
 
-    @GetMapping("/api/add_tag/{id}/{tag}")
+    @GetMapping("/add_tag/{id}/{tag}")
     public String addTag(@PathVariable("id") Long id, @PathVariable("tag") String tag, Model model){
         taskService.addTag(id, tag);
         return getAll(model);
     }
 
-    @GetMapping("/api/addBelongTo/{userId}/{taskId}")
+    @GetMapping("/addBelongTo/{userId}/{taskId}")
     public String addBelongTo(@PathVariable("userId") Long userId, @PathVariable("taskId") Long taskId, Model model){
         userBelongService.saveNewUserBelong(userId,taskId);
         return getAll(model);
