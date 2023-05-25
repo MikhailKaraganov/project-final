@@ -24,7 +24,7 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:postgresql://postgres-db1:5432/jira
+    url: jdbc:postgresql://localhost:5432/jira
 
 
   liquibase:
@@ -48,16 +48,13 @@ spring:
       client:
         registration:
           github:
-            client-id: 3d0d8738e65881fff266
             scope:
               - email
           google:
-            client-id: 329113642700-f8if6pu68j2repq3ef6umd5jgiliup60.apps.googleusercontent.com
             scope:
               - email
               - profile
           gitlab:
-            client-id: b8520a3266089063c0d8261cce36971defa513f5ffd9f9b7a3d16728fc83a494
             client-name: GitLab
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
