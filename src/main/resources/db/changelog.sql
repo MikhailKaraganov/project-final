@@ -251,7 +251,14 @@ values (1, 'skype', 'userSkype'),
        (2, 'tg', 'adminTg'),
        (2, 'vk', 'adminVk');
 
+insert into ACTIVITY ( ID, AUTHOR_ID, TASK_ID, UPDATED, STATUS_CODE )
+values (1, 1, 2, '2017-07-23,  13:10:11', 'in progress'),
+       (2, 1, 2, '2017-07-23,  18:30:11', 'ready'),
+       (3, 1, 2, '2017-07-23,  23:20:11', 'done');
+
+
 --changeset kriffer:add_dashboard
+
 
 INSERT INTO project (id, code, title, description, type_code, startpoint, endpoint, parent_id) VALUES (2, 'task tracker', 'PROJECT-1', 'test project', 'task tracker', null, null, null);
 

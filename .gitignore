@@ -4,5 +4,4 @@ target
 *.iml
 logs
 *.patch
-
-
+application-sensitive.yaml
